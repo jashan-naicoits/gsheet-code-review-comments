@@ -40,6 +40,11 @@ try {
   // `who-to-greet` input defined in action metadata file
   const nameToGreet = core.getInput('who-to-greet');
   console.log(`Hello ${nameToGreet}!`);
+  console.log(`Hello ${core.getInput('sheetId')}!`);
+  console.log(`Hello ${core.getInput('client_email')}!`);
+  console.log(`Hello ${core.getInput('private_key')}!`);
+
+  console.log('test 5');
   const time = (new Date()).toTimeString();
 
   fromGit = {
