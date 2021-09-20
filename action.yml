@@ -5,15 +5,15 @@ inputs:
     description: 'Who to greet'
     required: true
     default: 'World'
-  sheetId:  # id of input
+  sheetId:  # sheet id of input
     description: 'Sheet Id'
     required: true
     default: 'World'
-  client_email:  # id of input
+  client_email:  # client email of input
     description: 'Client Email'
     required: true
     default: 'World'
-  private_key:  # id of input
+  private_key:  # Private key of input
     description: 'Private Key'
     required: true
     default: 'World'
