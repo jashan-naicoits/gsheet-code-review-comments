@@ -5,6 +5,9 @@ This action prints "Hello World" or "Hello" + the name of a person to greet to t
 ## Inputs
 
 ## `who-to-greet`
+## `sheetId`
+## `client_email`
+## `private_key`
 
 **Required** The name of the person to greet. Default `"World"`.
 
