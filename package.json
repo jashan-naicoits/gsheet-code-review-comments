@@ -20,6 +20,7 @@
   "dependencies": {
     "@actions/core": "^1.5.0",
     "@actions/github": "^5.0.0",
-    "google-spreadsheet": "Naico-Mobile-Team/node-google-spreadsheet"
+    "google-spreadsheet": "Naico-Mobile-Team/node-google-spreadsheet",
+    "node-fetch": "^2.6.2"
   }
 }
