@@ -18,7 +18,7 @@ async function fetchFromGithub(fromGit) {
   .then(response => response.json())
   .then(async (data) => {
     console.log('got data from github url');
-    // console.log(data[0].review_comments_url);
+    console.log(data[0].review_comments_url);
     // console.log(data[0].commits_url);
     // commits_url
     
@@ -54,7 +54,6 @@ async function fetchGithubCommitDetails(fromGit, commits) {
       },
     }).then(response => response.json())
     .then(async (data) => {
-      console.log('data', data.committer);
       committer = data.committer.login;
       return {stat:data.stats, file:data.files}
     })
@@ -107,7 +106,7 @@ async function fetchGithubCommitDetails(fromGit, commits) {
       'List of Files Reviewed': fileNames.join('\n'),
     }
 
-    accessSpreadSheet(fromGit, [data], 'CodeReviewSummary', {X: 'C', Y: 3}, data);
+    accessSpreadSheet(fromGit, [data], 'CodeReviewSummary', {X: 'C', Y: 3});
     // fetchGitHubReviewComments(fromGit);
   })
 }
@@ -148,8 +147,7 @@ fromGit = {
 
 fetchFromGithub(fromGit)
 
-async function accessSpreadSheet(fromGit, result, sheetTitle, sheetPos, sheetData) {
-
+async function accessSpreadSheet(fromGit, result, sheetTitle, sheetPos) {
   // fetch from github api
 
   const doc = new GoogleSpreadsheet.GoogleSpreadsheet(fromGit.sheetId);
@@ -176,7 +174,7 @@ async function accessSpreadSheet(fromGit, result, sheetTitle, sheetPos, sheetDat
   result.forEach(row => {
     console.log('row');
     console.log(row);
-    sheet.addRow(sheetData)
+    sheet.addRow(row)
   });
 
 }
