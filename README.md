@@ -10,6 +10,7 @@ This action prints "Hello World" or "Hello" + the name of a person to greet to t
 ## `private_key`
 ## `token`
 ## `gitUrl`
+## `pr_number`
 
 **Required** The name of the person to greet. Default `"World"`.
 

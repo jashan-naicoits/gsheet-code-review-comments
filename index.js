@@ -62,14 +62,21 @@ async function fetchFromGithub(fromGit) {
   .then(response => response.json())
   .then(async (data) => {
     console.log('got data from github url');
-    console.log(data);
-    console.log(data[0].review_comments_url);
+    // console.log(data);
+    let prData = null
+    data.forEach((d) => {
+      console.log(d.number);
+      if(d.number == fromGit.pr_number) {
+        prData = [d]
+        return
+      }
+    })
     // console.log(data[0].commits_url);
     // commits_url
 
-    fetchGitHubReviewComments(fromGit, data).then(async (reviewer) => {
+    fetchGitHubReviewComments(fromGit, prData).then(async (reviewer) => {
       console.log('fetching commits url')
-      await fetch(`${data[0].commits_url}`, {
+      await fetch(`${prData[0].commits_url}`, {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${fromGit.token}`
@@ -252,6 +259,7 @@ try {
   console.log(`client_email ${core.getInput('client_email')}!`);
   console.log(`token ${core.getInput('token')}!`);
   console.log(`gitUrl ${core.getInput('gitUrl')}!`);
+  console.log(`pr_number ${core.getInput('pr_number')}!`);
 
   console.log('test 5');
   const time = (new Date()).toTimeString();
