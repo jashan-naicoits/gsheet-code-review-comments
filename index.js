@@ -72,7 +72,7 @@ async function fetchFromGithub(fromGit) {
       }
     })
     // console.log(data[0].commits_url);
-    console.log(prData)
+    // console.log(prData)
     // commits_url
 
     fetchGitHubReviewComments(fromGit, prData).then(async (reviewer) => {
@@ -133,8 +133,8 @@ async function fetchGithubCommitDetails(fromGit, commits, reviewer, nextCodeRevi
     // console.log('fileResult', fileResult[0][0].sha);
     // console.log('fileResult', fileResult[fileResult.length - 1][0].sha);
     let gitRevision = `${fileResult[0][0].sha}...${fileResult[fileResult.length - 1][0].sha}`
-    console.log('gitRevision', gitRevision);
-
+    // console.log('gitRevision', gitRevision);
+    // console.log('fileResult', fileResult.length)
     fileResult.forEach((files, index) => {
       // console.log(files);
       files.forEach(file => {
