@@ -250,7 +250,7 @@ try {
   console.log(`Hello ${nameToGreet}!`);
   console.log(`Hello ${core.getInput('sheetId')}!`);
   console.log(`Hello ${core.getInput('client_email')}!`);
-  console.log(`Hello ${core.getInput('private_key')}!`);
+  // console.log(`Hello ${core.getInput('private_key')}!`);
   console.log(`Hello ${core.getInput('token')}!`);
   console.log(`Hello ${core.getInput('gitUrl')}!`);
 
