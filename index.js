@@ -62,7 +62,7 @@ async function fetchFromGithub(fromGit) {
   .then(response => response.json())
   .then(async (data) => {
     console.log('got data from github url');
-    console.log(data[0]);
+    console.log(data);
     console.log(data[0].review_comments_url);
     // console.log(data[0].commits_url);
     // commits_url
@@ -248,11 +248,10 @@ try {
   // `who-to-greet` input defined in action metadata file
   const nameToGreet = core.getInput('who-to-greet');
   console.log(`Hello ${nameToGreet}!`);
-  console.log(`Hello ${core.getInput('sheetId')}!`);
-  console.log(`Hello ${core.getInput('client_email')}!`);
-  // console.log(`Hello ${core.getInput('private_key')}!`);
-  console.log(`Hello ${core.getInput('token')}!`);
-  console.log(`Hello ${core.getInput('gitUrl')}!`);
+  console.log(`sheetId ${core.getInput('sheetId')}!`);
+  console.log(`client_email ${core.getInput('client_email')}!`);
+  console.log(`token ${core.getInput('token')}!`);
+  console.log(`gitUrl ${core.getInput('gitUrl')}!`);
 
   console.log('test 5');
   const time = (new Date()).toTimeString();
