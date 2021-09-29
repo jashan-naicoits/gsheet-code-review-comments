@@ -52,7 +52,7 @@ async function getNextCodeReviewId(fromGit, sheetTitle, sheetPos) {
 // fetch from Github API
 async function fetchFromGithub(fromGit) {
   //get main url
-  console.log('fetching github url')
+  console.log('fetching github url', fromGit.gitUrl)
   await fetch(fromGit.gitUrl, {
     method: 'GET',
     headers: {
@@ -62,6 +62,7 @@ async function fetchFromGithub(fromGit) {
   .then(response => response.json())
   .then(async (data) => {
     console.log('got data from github url');
+    console.log(data[0]);
     console.log(data[0].review_comments_url);
     // console.log(data[0].commits_url);
     // commits_url
