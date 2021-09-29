@@ -63,15 +63,16 @@ async function fetchFromGithub(fromGit) {
   .then(async (data) => {
     console.log('got data from github url');
     // console.log(data);
-    let prData = null
+    let prData = []
     data.forEach((d) => {
       console.log(d.number);
       if(d.number == fromGit.pr_number) {
-        prData = [d]
+        prData.push(d)
         return
       }
     })
     // console.log(data[0].commits_url);
+    console.log(prData)
     // commits_url
 
     fetchGitHubReviewComments(fromGit, prData).then(async (reviewer) => {
