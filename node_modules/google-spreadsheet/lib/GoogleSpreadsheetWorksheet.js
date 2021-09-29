@@ -437,7 +437,8 @@ class GoogleSpreadsheetWorksheet {
     const lastRow = firstRow + options.limit - 1; // inclusive so we subtract 1
     const lastColumn = columnToLetter(this.headerValues.length);
     const rawRows = await this.getCellsInRange(
-      `A${firstRow}:${lastColumn}${lastRow}`
+      // changed to accommodate for headers props 
+      `${this._headerX}${this._headerY}:${lastColumn}${lastRow}`
     );
 
     if (!rawRows) return [];
