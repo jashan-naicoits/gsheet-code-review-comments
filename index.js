@@ -270,6 +270,7 @@ try {
     client_email: core.getInput('client_email'),
     private_key: core.getInput('private_key'),
     token: core.getInput('token'),
+    pr_number: core.getInput('pr_number'),
   }
 
   // accessSpreadSheet(fromGit)
