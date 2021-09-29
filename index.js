@@ -62,7 +62,7 @@ async function fetchFromGithub(fromGit) {
   .then(response => response.json())
   .then(async (data) => {
     console.log('got data from github url');
-    // console.log(data);
+    console.log(data);
     let prData = []
     data.forEach((d) => {
       console.log(d.number);
