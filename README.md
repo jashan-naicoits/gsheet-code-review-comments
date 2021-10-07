@@ -72,8 +72,7 @@ then the GIT_URL will be
 https://api.github.com/repos/Naico-Mobile-Team/ecommerce_nrc/pulls  
 
 
-Once the setup is done.
-add a javascript action to your repo. 
+Once the setup is done add a javascript action to your repo. 
 example is added at [action](action_example/javascript.yml)  
 
 ## ***Refrence***  
