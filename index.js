@@ -149,7 +149,7 @@ async function fetchGithubCommitDetails(
     // console.log('fileNames', fileNames);
     const data = {
       Sprint: "Sprint Name",
-      TaskID: new Date(Date.now()).toLocaleString(),
+      TaskID: fromGit.pr_number,
       "Code Review ID": nextCodeReviewId,
       Developer: committer,
       "LOC Added": additions,
@@ -158,7 +158,7 @@ async function fetchGithubCommitDetails(
       "List of Files Reviewed": fileNames.join("\n"),
       "Number of Comments": reviewer.commentsResult.length,
       Reviewer: reviewer.reviewer,
-      "Date of Review": new Date(Date.now()).toLocaleString(),
+      "Date of Review": new Date().toLocaleString("en-US", {timeZone: 'Asia/Kolkata'}),
       "GIT Revision": gitRevision,
     };
 
@@ -262,7 +262,6 @@ try {
   console.log(`gitUrl ${core.getInput("gitUrl")}!`);
   console.log(`pr_number ${core.getInput("pr_number")}!`);
 
-  console.log("test 5");
   const time = new Date().toTimeString();
 
   fromGit = {
