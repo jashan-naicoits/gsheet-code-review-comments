@@ -1,0 +1,29 @@
+name: javascript action
+on: 
+  # uncommenting workflow_dispatch will allow you to run the action manually from github actions
+  # workflow_dispatch:
+  # below line will allow you to run the action when comments are added to github pull requests, use for easy debugging issues in the action
+  # pull_request_review_comment:
+  #   types: [created, deleted]
+  pull_request:
+    types: [closed]
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: A job to automated code review
+    steps:
+      - name: Automated Code Review step
+        id: code_review
+        uses: Naico-Mobile-Team/gsheet-code-review-comments@latest
+        with:
+          who-to-greet: 'From <Your Project Name>'
+          sheetId: 'Sheet ID of your Ghseet'
+          client_email: ${{ secrets.GSHEET_CLIENT_EMAIL }}
+          private_key: ${{ secrets.GSHEET_PRIVATE_KEY }}
+          gitUrl: ${{ secrets.GIT_URL }}
+          token: ${{ secrets.GIT_HUB_CI_TOKEN }}
+          pr_number: ${{ github.event.pull_request.number }}
+      # Use the output from the `hello` step
+      - name: Get the output time
+        run: echo "Code Review done for PR number ${{ github.event.pull_request.number }}"

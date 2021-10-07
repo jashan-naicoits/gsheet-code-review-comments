@@ -51,9 +51,7 @@ Copy the private key and add to the GitHub secrets as ***GSHEET_PRIVATE_KEY***
 
 - ***`GSHEET_CLIENT_EMAIL`***
 
-Copy the client email and add to the GitHub secrets as  
-
-- ***`GSHEET_CLIENT_EMAIL`***  
+Copy the client email and add to the GitHub secrets as ***GSHEET_CLIENT_EMAIL***
 Also give write permission to the code review tracker for the Code Review Tracker  
 
 
@@ -72,3 +70,13 @@ if your repo url is
 https://github.com/Naico-Mobile-Team/ecommerce_nrc  
 then the GIT_URL will be  
 https://api.github.com/repos/Naico-Mobile-Team/ecommerce_nrc/pulls  
+
+
+Once the setup is done.
+add a javascript action to your repo. 
+example is added at [action](action_example/javascript.yml)  
+
+## ***Refrence***  
+[https://docs.github.com/en/actions/creating-actions/creating-a-javascript-action](https://docs.github.com/en/actions/creating-actions/creating-a-javascript-action)
+
+Any changes in action needs to be released as a new tag and then updated in the action.
