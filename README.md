@@ -44,6 +44,8 @@ We have a service account created in Google Cloud Platform
 
 
 Get Private key from https://console.cloud.google.com/iam-admin/serviceaccounts/  
+Project Name: CodeReviewTracker 	codereviewtracker-296806
+GCP->API's & Services->Credentials->Select the service account->Keys->Add Key->Download the key file
 Download the json and copy the private key to a text editor  
 Replace "\n" with Enter key  
 Copy the private key and add to the GitHub secrets as ***GSHEET_PRIVATE_KEY***  
