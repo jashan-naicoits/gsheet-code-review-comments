@@ -148,7 +148,7 @@ async function fetchGithubCommitDetails(
     // console.log('changes', changes);
     // console.log('fileNames', fileNames);
     const data = {
-      Sprint: "Sprint01 Name",
+      Sprint: "Sprint- 16",
       //TaskID: fromGit.pr_number,
       TaskID: "Branch Name",
       "Code Review ID": nextCodeReviewId,
