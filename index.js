@@ -262,6 +262,7 @@ try {
   console.log(`token ${core.getInput("token")}!`);
   console.log(`gitUrl ${core.getInput("gitUrl")}!`);
   console.log(`pr_number ${core.getInput("pr_number")}!`);
+  console.log(`branch ${core.getInput("branch")}!`);
 
   const time = new Date().toTimeString();
 
@@ -272,6 +273,7 @@ try {
     private_key: core.getInput("private_key"),
     token: core.getInput("token"),
     pr_number: core.getInput("pr_number"),
+    branch: core.getInput("branch"),
   };
 
   // accessSpreadSheet(fromGit)
