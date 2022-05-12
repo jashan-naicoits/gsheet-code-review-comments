@@ -163,7 +163,7 @@ async function fetchGithubCommitDetails(
       Reviewer: reviewer.reviewer,
       "Date of Review": new Date().toLocaleString("en-US", {timeZone: 'Asia/Kolkata'}),
       "GIT Revision": gitRevision,
-      "Technology": "Mobile"
+      "Technology": fromGit.tech
     };
 
     accessSpreadSheet(fromGit, [data], "CodeReviewSummary", { X: "C", Y: 3 });
@@ -279,6 +279,7 @@ try {
     token: core.getInput("token"),
     pr_number: core.getInput("pr_number"),
     branch_name: core.getInput("branch_name"),
+    tech: core.getInput("tech"),
   };
 
   // accessSpreadSheet(fromGit)
