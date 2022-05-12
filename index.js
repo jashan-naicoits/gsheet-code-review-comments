@@ -89,6 +89,7 @@ async function fetchGithubCommitDetails(
   let fileResult = [];
   let committer;
   let git_branch;
+  
   console.log("fetching commit details url");
   Promise.all(
     commits.map(async (commit) => {
@@ -101,7 +102,6 @@ async function fetchGithubCommitDetails(
         .then((response) => response.json())
         .then(async (data) => {
           committer = data.committer.login;
-          git_branch = data.branch
           return { stat: data.stats, file: data.files };
         });
       statResult.push(res.stat);
@@ -152,7 +152,7 @@ async function fetchGithubCommitDetails(
     const data = {
       Sprint: "Sprint Name",
       //TaskID: fromGit.pr_number,
-      TaskID: git_branch,
+      TaskID: fromGit.branch_name,
       "Code Review ID": nextCodeReviewId,
       Developer: committer,
       "LOC Added": additions,
@@ -278,7 +278,7 @@ try {
     private_key: core.getInput("private_key"),
     token: core.getInput("token"),
     pr_number: core.getInput("pr_number"),
-    branch: core.getInput("branch"),
+    branch_name: core.getInput("branch_name"),
   };
 
   // accessSpreadSheet(fromGit)
