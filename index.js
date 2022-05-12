@@ -150,7 +150,7 @@ async function fetchGithubCommitDetails(
     const data = {
       Sprint: "Sprint Name",
       //TaskID: fromGit.pr_number,
-      TaskID: fromGit.branch,
+      TaskID: fromGit.event.pull_request.head.ref,
       "Code Review ID": nextCodeReviewId,
       Developer: committer,
       "LOC Added": additions,
