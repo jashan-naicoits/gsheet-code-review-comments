@@ -161,6 +161,7 @@ async function fetchGithubCommitDetails(
       Reviewer: reviewer.reviewer,
       "Date of Review": new Date().toLocaleString("en-US", {timeZone: 'Asia/Kolkata'}),
       "GIT Revision": gitRevision,
+      "Technology": "Mobile"
     };
 
     accessSpreadSheet(fromGit, [data], "CodeReviewSummary", { X: "C", Y: 3 });
